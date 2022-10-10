@@ -2,26 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:players_task/views/addPalyers/cubits/cubits.dart';
 import 'package:players_task/views/addPalyers/models/model.dart';
-import 'package:players_task/views/addPalyers/states/states.dart';
 import 'package:players_task/views/addPalyers/widgets/bodyList.dart';
 import 'package:players_task/views/addPalyers/widgets/playersTapBar.dart';
 import 'package:players_task/views/addPalyers/widgets/searchTextField.dart';
-import 'package:players_task/views/addPalyers/widgets/user_component.dart';
 
-class AddPlayers extends StatefulWidget {
+class Home_widget extends StatefulWidget {
   @override
-  State<AddPlayers> createState() => _AddPlayersState();
+  State<Home_widget> createState() => _Home_widgetState();
 }
-List<Users>? search;
 
-class _AddPlayersState extends State<AddPlayers> {
+class _Home_widgetState extends State<Home_widget> {
 
 
   @override
 
   Widget build(BuildContext context) {
-
-  final  List<Users> search= [];
 
     return Scaffold(
         backgroundColor: Colors.white,

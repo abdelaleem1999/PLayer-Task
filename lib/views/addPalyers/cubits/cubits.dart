@@ -9,7 +9,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   static HomeCubit of(context) => BlocProvider.of(context);
   Model? homeModel;
-  List<Users> persons = [];
+  List<Users> friends_list = [];
   List<Users> search = [];
   var data = [];
   int limit = 4;
@@ -38,11 +38,11 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-  addplayer(value) {
+  add_friend(value) {
     emit(HomeLoading());
-    persons.add(value);
+    friends_list.add(value);
     emit(HomeInitial());
-    print(persons.length);
+    print(friends_list.length);
   }
 
   add2(value) {
@@ -52,11 +52,11 @@ class HomeCubit extends Cubit<HomeState> {
     print(search.length);
   }
 
-  removePlayer(value) {
+  remove_friend(value) {
     emit(HomeLoading());
-    persons.remove(value);
+    friends_list.remove(value);
     emit(HomeInitial());
-    print(persons.length);
+    print(friends_list.length);
   }
 
   void search_by_name(String text) {

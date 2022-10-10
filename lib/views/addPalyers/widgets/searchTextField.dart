@@ -19,7 +19,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   Widget build(BuildContext context) {
     FocusScopeNode currentFocus = FocusScope.of(context);
 
-    return               GestureDetector(
+    return GestureDetector(
       onTap: (){
       },
       child: BlocBuilder(

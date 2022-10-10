@@ -24,9 +24,10 @@ class Home extends StatelessWidget {
       ],
 
       child: MaterialApp(
-        home: AddPlayers(),
+        home: Home_widget(),
         debugShowCheckedModeBanner: false,
       ),
     );
   }
 }
+// new

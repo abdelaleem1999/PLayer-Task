@@ -73,14 +73,14 @@ class _UserComponentState extends State<UserComponent> {
                       ),
                     ),
                     Spacer(),
-                    !HomeCubit.of(context).persons.contains(widget.m![widget.index!])
+                    !HomeCubit.of(context).friends_list.contains(widget.m![widget.index!])
                         ?InkWell(
                       onTap: (){
-                        if( HomeCubit.of(context).persons.contains(widget.m![widget.index!])){
+                        if( HomeCubit.of(context).friends_list.contains(widget.m![widget.index!])){
 
                         }else
                         {
-                          HomeCubit.of(context).addplayer(widget.m![widget.index!]);
+                          HomeCubit.of(context).add_friend(widget.m![widget.index!]);
 
                         }
 
@@ -89,7 +89,6 @@ class _UserComponentState extends State<UserComponent> {
                           isadd = !isadd;
 
                         });
-                        print( HomeCubit.of(context).persons.length.toString());
 
                       },
                           child: AddButton(
@@ -99,7 +98,7 @@ class _UserComponentState extends State<UserComponent> {
                         )
                         :InkWell(
                       onTap: (){
-                        HomeCubit.of(context).removePlayer(widget.m![widget.index!]);
+                        HomeCubit.of(context).remove_friend(widget.m![widget.index!]);
                         setState(() {
 
                           isadd = !isadd;

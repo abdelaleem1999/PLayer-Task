@@ -20,12 +20,12 @@ class _BodyListState extends State<BodyList> {
   RefreshController(initialRefresh: false);
 
   void _onRefresh() async{
-    await Future.delayed(Duration(milliseconds: 1000));
+    await Future.delayed(Duration(milliseconds: 2000));
     _refreshController.refreshCompleted();
   }
 
   void _onLoading() async{
-    await Future.delayed(Duration(milliseconds: 1000));
+    await Future.delayed(Duration(milliseconds: 2000));
     HomeCubit.of(context).getData();
     if(mounted)
       setState(() {
@@ -64,6 +64,7 @@ class _BodyListState extends State<BodyList> {
 
        : HomeCubit.of(context).search.isEmpty||HomeCubit.of(context).search==null
             ?SmartRefresher(
+          header: Text("Looding"),
           enablePullUp: true,
           enablePullDown: false,
           controller:_refreshController ,

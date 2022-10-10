@@ -18,7 +18,7 @@ class _PlayersTapBarState extends State<PlayersTapBar> {
         builder: (context, state) => state is HomeInstant
             ? Text('')
             : ListView.builder(
-                itemCount: HomeCubit.of(context).persons.length,
+                itemCount: HomeCubit.of(context).friends_list.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -35,15 +35,15 @@ class _PlayersTapBarState extends State<PlayersTapBar> {
                               child: Image.network(errorBuilder: (context, error, stackTrace) {
                                 return CircularProgressIndicator();
                               },
-                                  HomeCubit.of(context).persons[index].image,
+                                  HomeCubit.of(context).friends_list[index].image,
                                   fit: BoxFit.cover),
                             ),
                           ),
 
                           InkWell(
                               onTap: () {
-                                HomeCubit.of(context).removePlayer(
-                                    HomeCubit.of(context).persons[index]);
+                                HomeCubit.of(context).remove_friend(
+                                    HomeCubit.of(context).friends_list[index]);
                               },
                               child: CircleAvatar(
                                   radius: 10,
@@ -52,7 +52,7 @@ class _PlayersTapBarState extends State<PlayersTapBar> {
                                       color: Colors.red, size: 20)))
                         ],
                       ),
-                      Text(HomeCubit.of(context).persons[index].firstName)
+                      Text(HomeCubit.of(context).friends_list[index].firstName)
                     ],
                   ),
                 ),
